@@ -17,6 +17,6 @@ const HideKeyboardWhenFocus = NativeModules.HideKeyboardWhenFocus
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return HideKeyboardWhenFocus.multiply(a, b);
+export function hideKeyboard() {
+  return HideKeyboardWhenFocus.hideKeyboard();
 }

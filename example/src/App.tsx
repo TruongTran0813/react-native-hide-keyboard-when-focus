@@ -1,18 +1,12 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-hide-keyboard-when-focus';
+import { StyleSheet, View, TextInput } from 'react-native';
+import { hideKeyboard } from 'react-native-hide-keyboard-when-focus';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TextInput style={styles.input} onFocus={() => hideKeyboard()} />
     </View>
   );
 }
@@ -23,9 +17,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  input: {
+    borderWidth: 1,
+    width: 200,
   },
 });

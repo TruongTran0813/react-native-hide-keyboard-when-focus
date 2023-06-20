@@ -1,5 +1,9 @@
 package com.hidekeyboardwhenfocus;
 
+import android.app.Activity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.Promise;
@@ -25,8 +29,15 @@ public class HideKeyboardWhenFocusModule extends ReactContextBaseJavaModule {
 
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
+ 
   @ReactMethod
-  public void multiply(double a, double b, Promise promise) {
-    promise.resolve(a * b);
-  }
+    public void hideKeyboard() {
+        final Activity activity = getCurrentActivity();
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        View view = activity.getCurrentFocus();
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 }
