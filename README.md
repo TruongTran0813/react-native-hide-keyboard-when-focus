@@ -2,11 +2,18 @@
 
 Used to hide keyboard when user focus on input
 
+ [![npm version](https://badge.fury.io/js/react-native-hide-keyboard-when-focus.svg)](https://www.npmjs.com/package/react-native-hide-keyboard-when-focus)
 ## Installation
-
-```sh
-npm install react-native-hide-keyboard-when-focus
+Install via NPM [Check In NPM](https://www.npmjs.com/package/react-native-hide-keyboard-when-focus)
+```bash
+npm install react-native-hide-keyboard-when-focus --save
 ```
+
+Or install via github
+```bash
+npm install https://github.com/TruongTran0813/react-native-hide-keyboard-when-focus.git --save
+```
+
 
 ## Usage
 
