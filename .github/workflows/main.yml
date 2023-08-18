@@ -17,9 +17,9 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           # Defaults to the user or organization that owns the workflow file
-          
-      - name: Publish package on NPM 📦
+      - name: Install dependencies
         run: yarn install
+      - name: Publish package on NPM 📦
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
